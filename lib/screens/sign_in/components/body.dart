@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:what_eat_v2/components/no_account_text.dart';
-import 'package:what_eat_v2/constants.dart';
 
 import 'package:what_eat_v2/size_config.dart';
 
