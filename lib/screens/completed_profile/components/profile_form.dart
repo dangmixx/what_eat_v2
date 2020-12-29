@@ -76,14 +76,12 @@ class _ProfileFormState extends State<ProfileForm> {
       onSaved: (newValue) => firstName = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kFirstNamelNullError)) {
-          removeError(kFirstNamelNullError);
+          // removeError(kFirstNamelNullError);
         }
-        return null;
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kFirstNamelNullError)) {
-          addError(kFirstNamelNullError);
-          return "";
+          return kFirstNamelNullError;
         }
 
         return null;
@@ -105,18 +103,18 @@ class _ProfileFormState extends State<ProfileForm> {
 
   TextFormField buildLastNameField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.name,
       onSaved: (newValue) => lastName = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kLastNamelNullError)) {
           removeError(kLastNamelNullError);
         }
-        return null;
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kLastNamelNullError)) {
-          addError(kLastNamelNullError);
-          return "";
+          // addError(kLastNamelNullError);
+          return kLastNamelNullError;
         }
 
         return null;
@@ -138,18 +136,18 @@ class _ProfileFormState extends State<ProfileForm> {
 
   TextFormField buildAddressField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.streetAddress,
       onSaved: (newValue) => address = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kAddressNullError)) {
-          removeError(kAddressNullError);
+          // removeError(kAddressNullError);
         }
-        return null;
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kAddressNullError)) {
-          addError(kAddressNullError);
-          return "";
+          // addError(kAddressNullError);
+          return kAddressNullError;
         }
 
         return null;
@@ -171,20 +169,19 @@ class _ProfileFormState extends State<ProfileForm> {
 
   TextFormField buildPhoneField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.phone,
       onSaved: (newValue) => phone = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kPhoneNumberNullError)) {
-          removeError(kPhoneNumberNullError);
+          // removeError(kPhoneNumberNullError);
         }
-        return null;
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kPhoneNumberNullError)) {
-          addError(kPhoneNumberNullError);
-          return "";
+          // addError(kPhoneNumberNullError);
+          return kPhoneNumberNullError;
         }
-
         return null;
       },
       decoration: InputDecoration(

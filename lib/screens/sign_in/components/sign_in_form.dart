@@ -15,7 +15,6 @@ class SignForm extends StatefulWidget {
 
 class _SignForm extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> errors = [];
   bool rememberMe = false;
   String email;
   String password;
@@ -33,7 +32,6 @@ class _SignForm extends State<SignForm> {
             height: 15,
           ),
           buildPasswordField(),
-          FormErrors(errors: errors),
           SizedBox(
             height: 15,
           ),
@@ -64,7 +62,7 @@ class _SignForm extends State<SignForm> {
           DefaultButton(
             text: "Login",
             press: () {
-              if (_formKey.currentState.validate() && errors.length == 0) {
+              if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 Navigator.pushNamed(context, LoginSucessScreen.routeName);
               }
@@ -77,37 +75,15 @@ class _SignForm extends State<SignForm> {
 
   TextFormField buildEmailField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
-      onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-          return '';
-        } else if (emailValidatorRegExp.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
-          return '';
-        }
-        return null;
-      },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
-          return "";
-        } else if (!emailValidatorRegExp.hasMatch(value) &&
-            !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
-          return "";
+        if (value.isEmpty) {
+          return kEmailNullError;
+        } else if (!emailValidatorRegExp.hasMatch(value)) {
+          return kInvalidEmailError;
         }
-
         return null;
       },
       decoration: InputDecoration(
@@ -126,31 +102,13 @@ class _SignForm extends State<SignForm> {
 
   TextFormField buildPasswordField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       onSaved: (newValue) => password = newValue,
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kPassNullError)) {
-          setState(() {
-            errors.add(kPassNullError);
-          });
-          return "";
-        } else if (value.length < 8 && !errors.contains(kShortPassError)) {
-          setState(() {
-            errors.add(kShortPassError);
-          });
-          return "";
-        }
-
-        return null;
-      },
-      onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kPassNullError)) {
-          setState(() {
-            errors.remove(kPassNullError);
-          });
-        } else if (value.length > 8 && errors.contains(kShortPassError)) {
-          setState(() {
-            errors.remove(kShortPassError);
-          });
+        if (value.isEmpty) {
+          return kPassNullError;
+        } else if (value.length < 8) {
+          return kShortPassError;
         }
 
         return null;
@@ -158,16 +116,17 @@ class _SignForm extends State<SignForm> {
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       decoration: InputDecoration(
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          hintText: "Enter your password",
-          labelText: "Password",
-          suffixIcon: Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.lock,
-              color: kPrimaryColor,
-            ),
-          )),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        hintText: "Enter your password",
+        labelText: "Password",
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: Icon(
+            Icons.lock,
+            color: kPrimaryColor,
+          ),
+        ),
+      ),
     );
   }
 }

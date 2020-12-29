@@ -38,18 +38,18 @@ InputDecorationTheme inputDecorationTheme() {
     enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: kTextColor),
-        gapPadding: 0),
+        gapPadding: 0.0),
     focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: kTextColor),
-        gapPadding: 0),
+        gapPadding: 0.0),
     errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: kPrimaryColor),
-        gapPadding: 0),
+        gapPadding: 0.0),
     focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: kPrimaryColor),
-        gapPadding: 0),
+        gapPadding: 0.0),
   );
 }
