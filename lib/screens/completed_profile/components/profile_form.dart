@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_eat_v2/components/default_button.dart';
 import 'package:what_eat_v2/components/form_errors.dart';
+import 'package:what_eat_v2/screens/otp/otp_screen.dart';
 
 import '../../../constants.dart';
 
@@ -49,6 +50,7 @@ class _ProfileFormState extends State<ProfileForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, OtpScreen.routerName);
               }
             },
             text: "Continue",
