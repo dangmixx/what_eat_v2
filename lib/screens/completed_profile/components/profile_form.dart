@@ -50,7 +50,7 @@ class _ProfileFormState extends State<ProfileForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
-                Navigator.pushNamed(context, OtpScreen.routerName);
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
             text: "Continue",
