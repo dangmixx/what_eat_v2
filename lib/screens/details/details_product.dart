@@ -15,8 +15,11 @@ class DetailsProductScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: CustomAppBar(argument.prodcutDetail.rating),
-      body: DetailProductBody(
-        product: argument.prodcutDetail,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: DetailProductBody(
+          product: argument.prodcutDetail,
+        ),
       ),
     );
   }
