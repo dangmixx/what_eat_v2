@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_eat_v2/screens/cart/cart_screen.dart';
 
 import 'icon_button_couting.dart';
 import 'search_form_field_header.dart';
@@ -23,7 +24,9 @@ class HomeHeader extends StatelessWidget {
               IconButtonCouting(
                 icon: (Icons.shopping_cart_outlined),
                 numberCounting: 1,
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, CartScreen.routeName);
+                },
               ),
               IconButtonCouting(
                 icon: (Icons.notifications_outlined),

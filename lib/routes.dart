@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_eat_v2/screens/cart/cart_screen.dart';
 import 'package:what_eat_v2/screens/completed_profile/complete_profile_screen.dart';
 import 'package:what_eat_v2/screens/details/details_product.dart';
 import 'package:what_eat_v2/screens/forgot_password/forgot_password_screen.dart';
@@ -23,4 +24,5 @@ final Map<String, WidgetBuilder> routes = {
   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
   OtpScreen.routeName: (context) => OtpScreen(),
   DetailsProductScreen.routeName: (context) => DetailsProductScreen(),
+  CartScreen.routeName: (context) => CartScreen()
 };
