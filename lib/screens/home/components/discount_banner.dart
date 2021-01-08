@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:what_eat_v2/screens/random_ot/random_lot_screen.dart';
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
@@ -16,19 +17,25 @@ class DiscountBanner extends StatelessWidget {
         color: Colors.redAccent,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: RichText(
-        text: TextSpan(
-          text: 'Summer Sale\n',
-          style: TextStyle(color: Colors.white),
-          children: [
-            TextSpan(
-              text: 'Discount 49%\n',
-              style: TextStyle(
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, RandomLotScreen.routeName);
+        },
+        child: RichText(
+          text: TextSpan(
+            text: 'VietLot\n',
+            style: TextStyle(color: Colors.white),
+            children: [
+              TextSpan(
+                text: 'Trúng 100%\n',
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20),
-            ),
-          ],
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
