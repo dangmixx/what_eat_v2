@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:what_eat_v2/screens/cart/cart_screen.dart';
 import 'package:what_eat_v2/screens/completed_profile/complete_profile_screen.dart';
+import 'package:what_eat_v2/screens/details/details_product.dart';
 import 'package:what_eat_v2/screens/forgot_password/forgot_password_screen.dart';
 import 'package:what_eat_v2/screens/home/home_screen.dart';
 import 'package:what_eat_v2/screens/login_sucess/login_sucess_screen.dart';
+import 'package:what_eat_v2/screens/otp/otp_screen.dart';
+import 'package:what_eat_v2/screens/random_ot/random_lot_screen.dart';
 import 'package:what_eat_v2/screens/register/register_screen.dart';
 import 'package:what_eat_v2/screens/sign_in/sign-in_screen.dart';
 import 'package:what_eat_v2/screens/sign_up/sign_up_screen.dart';
@@ -19,4 +23,8 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
+  OtpScreen.routeName: (context) => OtpScreen(),
+  DetailsProductScreen.routeName: (context) => DetailsProductScreen(),
+  CartScreen.routeName: (context) => CartScreen(),
+  RandomLotScreen.routeName: (context) => RandomLotScreen()
 };
