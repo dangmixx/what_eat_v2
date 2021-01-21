@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_eat_v2/routes.dart';
-import 'package:what_eat_v2/screens/splash/splash_screen.dart';
+import 'package:what_eat_v2/screens/home/home_screen.dart';
 import 'package:what_eat_v2/theme.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: them(),
-      initialRoute: SplashScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: routes,
     );
   }

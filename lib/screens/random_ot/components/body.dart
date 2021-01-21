@@ -111,10 +111,9 @@ class _ContainerResetNumberState extends State<ContainerResetNumber> {
     var listDefault = List.generate(typeOmega, (index) => index + 1);
     List<int> listNumber = [];
     for (var i = 0; i < 6; i++) {
-      var rng = new Random().nextInt(typeOmega - i);
-      listNumber.add(listDefault.removeAt(rng));
+      var rng = new Random().nextInt(99);
+      listNumber.add(listDefault.removeAt(rng % (typeOmega - i)));
     }
-
     listNumber.sort();
     stackList.add(listNumber);
   }
