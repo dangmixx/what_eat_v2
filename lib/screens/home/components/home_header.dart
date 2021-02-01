@@ -22,13 +22,13 @@ class HomeHeader extends StatelessWidget {
               SearchFormFieldHeader(
                 hintText: "Search...",
               ),
-              IconButtonCouting(
-                icon: (Icons.shopping_cart_outlined),
-                numberCounting: mockupCart.length,
-                press: () {
-                  Navigator.pushNamed(context, CartScreen.routeName);
-                },
-              ),
+              // IconButtonCouting(
+              //   icon: (Icons.shopping_cart_outlined),
+              //   numberCounting: mockupCart.length,
+              //   press: () {
+              //     Navigator.pushNamed(context, CartScreen.routeName);
+              //   },
+              // ),
               IconButtonCouting(
                 icon: (Icons.notifications_outlined),
                 numberCounting: 2,

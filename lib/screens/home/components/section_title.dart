@@ -18,7 +18,7 @@ class SectionTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Special for you',
+            text,
             style: TextStyle(fontSize: 20),
           ),
           GestureDetector(

@@ -12,7 +12,7 @@ class SearchFormFieldHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.screenWidth * 0.6,
+      width: SizeConfig.screenWidth * 0.7,
       height: 50,
       // color: Colors.black,
       decoration: BoxDecoration(
