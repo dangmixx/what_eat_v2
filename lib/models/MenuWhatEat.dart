@@ -7,10 +7,12 @@ class MenuWhatEat {
   final String imagePath;
   final List<String> listStep;
   final int likeCounting;
+  final int dislikeCoutning;
   final int createAt;
   final bool delete;
 
   MenuWhatEat({
+    this.dislikeCoutning,
     @required this.id,
     @required this.name,
     this.description = '',
@@ -20,25 +22,33 @@ class MenuWhatEat {
     this.createAt = 0,
     this.delete = false,
   });
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return 'MenuWhatEat: {id : ${id}, name : ${name}}';
+  }
 }
 
 List<MenuWhatEat> listWhatEat = [
   MenuWhatEat(
     id: '0001',
     name: 'Mâm cơm healthy ngày Tết',
-    imagePath: "assets/thucdon/mam-com-tet-healthy.jpg",
+    imagePath: "assets/thucdon/590-HH-TCC.png",
     listStep: ['Bước một', 'Bước hai'],
     createAt: DateTime.utc(2021, 1, 21).millisecondsSinceEpoch,
-    likeCounting: 20,
+    likeCounting: 999,
+    dislikeCoutning: 69,
     description: "Man com healthy cho ngay tet",
   ),
   MenuWhatEat(
     id: '0002',
     name: 'Mâm cơm Miền Bắc ngày Tết',
-    imagePath: "assets/images/ps4_console_white_1.png",
+    imagePath: "assets/thucdon/mam-com-tet-1.jpg",
     listStep: ['Bước một', 'Bước hai'],
     createAt: DateTime.utc(2021, 1, 21).millisecondsSinceEpoch,
     likeCounting: 23,
+    dislikeCoutning: 0,
   ),
   MenuWhatEat(
     id: '0003',
@@ -47,6 +57,7 @@ List<MenuWhatEat> listWhatEat = [
     listStep: ['Bước một', 'Bước hai'],
     createAt: DateTime.utc(2021, 1, 21).millisecondsSinceEpoch,
     likeCounting: 69,
+    dislikeCoutning: 0,
   ),
   MenuWhatEat(
     id: '0003',
@@ -55,5 +66,6 @@ List<MenuWhatEat> listWhatEat = [
     listStep: ['Bước một', 'Bước hai'],
     createAt: DateTime.utc(2021, 1, 21).millisecondsSinceEpoch,
     likeCounting: 14,
+    dislikeCoutning: 0,
   ),
 ];

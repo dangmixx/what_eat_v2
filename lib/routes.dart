@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:what_eat_v2/screens/cart/cart_screen.dart';
 import 'package:what_eat_v2/screens/completed_profile/complete_profile_screen.dart';
+import 'package:what_eat_v2/screens/detail_menu/detail_menu_screen.dart';
 import 'package:what_eat_v2/screens/details/details_product.dart';
 import 'package:what_eat_v2/screens/forgot_password/forgot_password_screen.dart';
 import 'package:what_eat_v2/screens/home/home_screen.dart';
@@ -26,5 +27,6 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => OtpScreen(),
   DetailsProductScreen.routeName: (context) => DetailsProductScreen(),
   CartScreen.routeName: (context) => CartScreen(),
-  RandomLotScreen.routeName: (context) => RandomLotScreen()
+  RandomLotScreen.routeName: (context) => RandomLotScreen(),
+  DetailMenuScreen.routeName: (context) => DetailMenuScreen()
 };
